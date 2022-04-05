@@ -1,5 +1,5 @@
 # Live Preview Link
- click [https://corporatebingo.surge.sh/]([https://corporatebingo.surge.sh/)
+ click [https://corporatebingo.surge.sh/] ([https://corporatebingo.surge.sh/)
 
 # Getting Started with Create React App
 

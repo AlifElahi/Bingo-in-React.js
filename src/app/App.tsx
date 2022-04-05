@@ -19,13 +19,17 @@ const App = () => {
   const [playConfettiSound] = useSound(confettiSound, { volume: 10 });
   const [dataList, setDataList] = useState<BoxData[]>(newDataList);
   const [lastIndex, setLastIndex] = useState<number>(0);
-  const [shouldCleebrate, setShouldCleebrate] = useState(false)
+  const [shouldCleebrate, setShouldCleebrate] = useState(false) 
 
   useEffect(() => {
 
     if (isBingo(lastIndex)) {
       setShouldCleebrate(true)
       playConfettiSound()
+      const timer = setTimeout(() => {
+        setShouldCleebrate(false)
+      }, 4000);
+      return () => clearTimeout(timer);
     }
   }, [lastIndex]);
 
