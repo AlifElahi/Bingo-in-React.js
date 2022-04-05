@@ -19,9 +19,15 @@
   align-items: center;
   justify-content: center;
   font-size: calc(8px + 2vmin);
+  
   color: white;
   margin-bottom: 5px;
 }
+h1 {
+ font-family:cursive;
+ font-style: italic;
+}
+
 
 .App-actions {
   margin-bottom: 15px;

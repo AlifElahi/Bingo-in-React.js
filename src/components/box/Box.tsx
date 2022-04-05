@@ -1,15 +1,12 @@
 import React from "react";
-import "./Cell.css";
+import "./Box.css";
 import classNames from "classnames";
 import { BoxProps } from "../../helper/types";
 
-const Cell: React.FC<BoxProps> = ({ word, stamped, isCenter, toggleStamped }) => {
+const Box: React.FC<BoxProps> = ({ word, stamped, isCenter, toggleStamped }) => {
 
-  const classes = classNames("Cell", { stamped: stamped });
+  const classes = classNames("Box", { stamped: stamped });
 
-  const htmlSoftHyphen = "&shy;";
-  const unicodeSoftHyphen = "\u00ad";
-  const normalise = (string: string): string => string.replace(new RegExp(htmlSoftHyphen, "g"), unicodeSoftHyphen);
 
 
   return (
@@ -18,7 +15,7 @@ const Cell: React.FC<BoxProps> = ({ word, stamped, isCenter, toggleStamped }) =>
       {isCenter ?
         <>
 
-          🌟 {normalise("Free cell")} 🌟
+          🌟 {word} 🌟
 
         </>
         : word}
@@ -27,4 +24,4 @@ const Cell: React.FC<BoxProps> = ({ word, stamped, isCenter, toggleStamped }) =>
   );
 };
 
-export default Cell;
+export default Box;

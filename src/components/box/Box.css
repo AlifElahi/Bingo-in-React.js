@@ -1,16 +1,17 @@
-.Cell {
-  font-size: smaller;
+.Box {
+  font-size: medium;
   padding: calc(2vmin - 4px);
-  border: 1px dashed;
+  border: 2px dashed #f0f41b;
   vertical-align: middle;
   overflow-wrap: break-word;
   max-width: 10px;
   max-height:10px;
   background-color: lightcyan;
+  text-transform: uppercase
 
 }
 
-.Cell.stamped {
-  /* background-color: lightblue; */
-  background-color: transparent;
+.Box.stamped {
+  background-color: #0E185F;
+  color: white;
 }

@@ -5,6 +5,9 @@ import { newWords } from '../helper/words';
 import ActionButton from '../components/actionButton/ActionButton';
 import Grid from '../components/grid/Grid';
 import Celebrate from '../components/celebrate/Celebrate';
+import useSound from 'use-sound';
+const toggleSound = require('../sounds/Boop.mp3')
+const confettiSound = require('../sounds/ConfettiPopSoundEffect.mp3')
 
 const App = () => {
   const newDataList = function (): BoxData[] {
@@ -12,12 +15,18 @@ const App = () => {
       return { word: index === 12 ? "Free Cell" : word, stamped: index === 12, isCenter: index === 12 };
     });
   };
+  const [playToggleSound] = useSound(toggleSound, { volume: .2 });
+  const [playConfettiSound] = useSound(confettiSound, { volume: 10 });
   const [dataList, setDataList] = useState<BoxData[]>(newDataList);
   const [lastIndex, setLastIndex] = useState<number>(0);
   const [shouldCleebrate, setShouldCleebrate] = useState(false)
 
   useEffect(() => {
-    setShouldCleebrate(isBingo(lastIndex))
+
+    if (isBingo(lastIndex)) {
+      setShouldCleebrate(true)
+      playConfettiSound()
+    }
   }, [lastIndex]);
 
 
@@ -49,6 +58,7 @@ const App = () => {
 
 
   const setStamped = (index: number, stamped: boolean, isCenter: boolean): void => {
+    playToggleSound()
     setShouldCleebrate(false)
     if (isCenter) return
     setDataList(
@@ -70,6 +80,7 @@ const App = () => {
     isCenter: boolean
   ): BoxClickHandler {
 
+
     return () => setStamped(index, !stamped, isCenter)
 
 
@@ -88,7 +99,7 @@ const App = () => {
 
   const clearAllCells: ButtonClickHandler = () => {
     setDataList(
-      dataList.map((boxData) => ({ ...boxData, stamped: false }))
+      dataList.map((boxData, index) => ({ ...boxData, stamped: index === 12 }))
     );
     setShouldCleebrate(false);
     setLastIndex(0)
@@ -99,7 +110,7 @@ const App = () => {
     <div className="App">
       <div >
         <header className="App-header">
-          <h1>Sensory Mind Bingo</h1>
+          <h1> Corporate Bingo</h1>
           <div className="App-actions">
             <ActionButton
               text="New card"
@@ -111,8 +122,6 @@ const App = () => {
               onClick={clearAllCells}
               activeDuration={100}
             />
-         
-
           </div>
         </header>
 
@@ -120,7 +129,7 @@ const App = () => {
       </div>
       <Celebrate
         show={shouldCleebrate} />
-      
+
     </div>
   );
 };
