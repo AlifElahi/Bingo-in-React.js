@@ -18,7 +18,6 @@
     "react-confetti": "^6.0.1",
     "react-dom": "^18.0.0",
     "react-scripts": "5.0.0",
-    "twemoji-awesome": "^1.0.6",
     "typescript": "^4.6.3",
     "use-sound": "^4.0.1",
     "web-vitals": "^2.1.4"
