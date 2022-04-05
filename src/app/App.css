@@ -1,0 +1,41 @@
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+  padding-right: 5vw;
+  padding-left: 5vw;
+  background: rgb(3, 57, 60);
+  background: linear-gradient(360deg, rgba(3, 57, 60, 1) 4%, rgba(46, 185, 155, 1) 35%, rgba(0, 255, 243, 0.9363095580028886) 91%);
+
+}
+
+.App-header {
+  background-color: #5971cf;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(8px + 2vmin);
+  color: white;
+  margin-bottom: 5px;
+}
+
+.App-actions {
+  margin-bottom: 15px;
+}
+
+.App-actions button {
+  padding: 0.5rem 1rem;
+  margin: 0 0.5rem;
+  line-height: 1.15;
+  font-weight: bold;
+  color: white;
+  border-color: white;
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 0.25rem;
+  background-color: transparent;
+}
