@@ -3,11 +3,12 @@ import { render, screen } from "@testing-library/react";
 import Grid from "./Grid";
 
 const toggleStamped = function () {};
+
 const BoxPropsList = [
-  { word: "Aardvark", stamped: false,isCenter:false, toggleStamped: toggleStamped },
-  { word: "Albatross", stamped: false,isCenter:false, toggleStamped: toggleStamped },
+  { word: "circle back", stamped: false,isCenter:false, toggleStamped: toggleStamped },
+  { word: "KPI", stamped: false,isCenter:false, toggleStamped: toggleStamped },
   { word: "Alligator", stamped: false,isCenter:false, toggleStamped: toggleStamped },
-  { word: "Alpaca", stamped: false,isCenter:false, toggleStamped: toggleStamped },
+  { word: "Rock Star", stamped: false,isCenter:false, toggleStamped: toggleStamped },
   { word: "Anole", stamped: false,isCenter:false, toggleStamped: toggleStamped },
   { word: "Ant", stamped: false,isCenter:false, toggleStamped: toggleStamped },
   { word: "Anteater", stamped: false,isCenter:false, toggleStamped: toggleStamped },
@@ -36,10 +37,10 @@ test("displays the words in a grid", () => {
 
   const rows = screen.queryAllByRole("row");
   const row1 = rows[0];
-  expect(row1).toHaveTextContent("Aardvark");
-  expect(row1).toHaveTextContent("Albatross");
+  expect(row1).toHaveTextContent("circle back");
+  expect(row1).toHaveTextContent("KPI");
   expect(row1).toHaveTextContent("Alligator");
-  expect(row1).toHaveTextContent("Alpaca");
+  expect(row1).toHaveTextContent("Rock Star");
   expect(row1).toHaveTextContent("Anole");
   const row2 = rows[1];
   expect(row2).toHaveTextContent("Ant");

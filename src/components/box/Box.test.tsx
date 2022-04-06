@@ -7,13 +7,13 @@ test("shows as stamped if stamped", () => {
     <table>
       <tbody>
         <tr>
-          <Box word="Budgie" stamped={true} isCenter={false} toggleStamped={() => {}} />
+          <Box word="Own it" stamped={true} isCenter={false} toggleStamped={() => {}} />
         </tr>
       </tbody>
     </table>
   );
 
-  expect(screen.getByText("Budgie")).toHaveClass("stamped");
+  expect(screen.getByText("Own it")).toHaveClass("stamped");
 });
 
 test("shows as not stamped if not stamped", () => {
@@ -21,11 +21,11 @@ test("shows as not stamped if not stamped", () => {
     <table>
       <tbody>
         <tr>
-          <Box word="Budgie" stamped={false} isCenter={false} toggleStamped={() => {}} />
+          <Box word="Own it" stamped={false} isCenter={false} toggleStamped={() => {}} />
         </tr>
       </tbody>
     </table>
   );
 
-  expect(screen.getByText("Budgie")).not.toHaveClass("stamped");
+  expect(screen.getByText("Own it")).not.toHaveClass("stamped");
 });
